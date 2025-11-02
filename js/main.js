@@ -580,7 +580,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Fetch testimonials from JSON
   try {
-    const res = await fetch("https://squarshtech.github.io/assets/testimonial.json");
+    const res = await fetch("https://squarshtech.github.io/final-olis-site/assets/testimonial.json");
     testimonials = await res.json();
     renderTestimonial(current);
     renderPagination();
