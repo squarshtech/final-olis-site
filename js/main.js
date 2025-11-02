@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   // Load gallery data
-     fetch("https://squarshtech.github.io/assets/gallery.json")
+     fetch("https://squarshtech.github.io/final-olis-site/assets/gallery.json")
     .then(res => res.json())
     .then(data => {
       galleryData = data;
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function loadResources() {
         try
         {
-            const res = await fetch("./assets/resources.json");
+            const res = await fetch("https://github.com/squarshtech/final-olis-site/resources.json");
             resources = await res.json();
             renderPage(currentPage);
         } catch (error)
@@ -706,4 +706,5 @@ document.addEventListener("DOMContentLoaded", async () => {
       formStatus.className = "text-center text-sm mt-3 text-red-500";
     }
   });
+
 
