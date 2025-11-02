@@ -535,7 +535,7 @@ const olisTeamContainer = document.getElementById("olis-team-container");
 async function olisFetchTeam() {
     try
     {
-        const res = await fetch("https://squarshtech.github.io/assets/team.json");
+        const res = await fetch("https://squarshtech.github.io/final-olis-site/assets/team.json");
         const team = await res.json();
 
         team.forEach((member) => {
