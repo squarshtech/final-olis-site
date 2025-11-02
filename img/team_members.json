@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Mr. John Mensah",
+        "subject": "Mathematics",
+        "position": "Head of Department",
+        "image": "mr._john_mensah.jpg"
+    },
+    {
+        "name": "Ms. Adjoa Owusu",
+        "subject": "English Language",
+        "position": "Teacher",
+        "image": "ms._adjoa_owusu.jpg"
+    },
+    {
+        "name": "Mr. Kwame Boateng",
+        "subject": "Science",
+        "position": "Teacher",
+        "image": "mr._kwame_boateng.jpg"
+    },
+    {
+        "name": "Mrs. Akua Serwaa",
+        "subject": "Social Studies",
+        "position": "Assistant Teacher",
+        "image": "mrs._akua_serwaa.jpg"
+    },
+    {
+        "name": "Mr. Kofi Asare",
+        "subject": "ICT",
+        "position": "Teacher",
+        "image": "mr._kofi_asare.jpg"
+    }
+]

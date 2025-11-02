@@ -1,0 +1,11 @@
+[
+  { "title": "Cultural Day", "image": "img/gallery/gallery_1.jpg" },
+  { "title": "Sports Meet", "image": "img/gallery/gallery_2.jpg" },
+  { "title": "Class Activity", "image": "img/gallery/gallery_3.jpg" },
+  { "title": "Independence Parade", "image": "img/gallery/gallery_4.jpg" },
+  { "title": "Graduation", "image": "img/gallery/gallery_4.jpg" },
+  { "title": "Science Fair", "image": "img/gallery/gallery_5.jpg" },
+  { "title": "Excursion", "image": "img/gallery/gallery_6.jpg" },
+  { "title": "Art Exhibition", "image": "img/gallery/gallery_7.jpg" },
+  { "title": "Music Festival", "image": "img/gallery/gallery_8.jpg" }
+]

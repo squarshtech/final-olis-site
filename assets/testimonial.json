@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ama Boateng",
+    "role": "Parent",
+    "image": "img/testimonial/testimonial1.jpg",
+    "message": "OLIS has been a transformative experience for my daughter. The teachers are dedicated and caring, and her confidence has grown tremendously."
+  },
+  {
+    "name": "Kwame Asare",
+    "role": "Student",
+    "image": "img/testimonial/testimonial2.jpg",
+    "message": "The learning environment at OLIS makes studying fun. Our teachers encourage creativity and teamwork every day."
+  },
+  {
+    "name": "Mrs. Adwoa Mensah",
+    "role": "PTA Chairperson",
+    "image": "img/testimonial/testimonial3.jpg",
+    "message": "OLIS represents excellence in leadership and education. The sense of community and discipline is unmatched."
+  },
+  {
+    "name": "Nana Yaw Owusu",
+    "role": "Alumnus",
+    "image": "img/testimonial/testimonial4.jpg",
+    "message": "My time at OLIS taught me responsibility and leadership. I’ll forever be proud to be part of this school."
+  },
+  {
+    "name": "Akosua Agyeman",
+    "role": "Parent",
+    "image": "img/testimonial/testimonial5.jpg",
+    "message": "Every event at OLIS is well-organized and inspiring. The students always display the highest level of discipline and talent."
+  }
+]

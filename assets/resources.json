@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Academic Calendar",
+    "description": "Plan your school term activities with our official schedule.",
+    "fileType": "PDF",
+    "fileUrl": "downloads/academic-calendar.pdf",
+    "updated": "Jan 10, 2025",
+    "icon": "calendar"
+  },
+  {
+    "title": "PTA Meeting Notes",
+    "description": "Review discussions and resolutions from the latest PTA meeting.",
+    "fileType": "PDF",
+    "fileUrl": "downloads/pta-meeting.pdf",
+    "updated": "Feb 5, 2025",
+    "icon": "users"
+  },
+  {
+    "title": "Articles & Newsletters",
+    "description": "Stay updated with our latest school publications and achievements.",
+    "fileType": "PDF",
+    "fileUrl": "downloads/articles.pdf",
+    "updated": "Mar 12, 2025",
+    "icon": "newspaper"
+  },
+  {
+    "title": "Admission Form",
+    "description": "Download and complete the form for new student admissions.",
+    "fileType": "DOCX",
+    "fileUrl": "downloads/admission-form.docx",
+    "updated": "Apr 2, 2025",
+    "icon": "file-text"
+  },
+  {
+    "title": "School Prospectus",
+    "description": "Learn more about OLIS programs, curriculum, and leadership vision.",
+    "fileType": "PDF",
+    "fileUrl": "downloads/school-prospectus.pdf",
+    "updated": "May 15, 2025",
+    "icon": "book"
+  },
+  {
+    "title": "Media & Photos",
+    "description": "Access event and classroom photo archives in a downloadable zip.",
+    "fileType": "ZIP",
+    "fileUrl": "downloads/sample-photos.zip",
+    "updated": "Jun 8, 2025",
+    "icon": "image"
+  }
+]

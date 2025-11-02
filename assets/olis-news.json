@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Speech and Prize Giving Day 2025",
+    "date": "March 20, 2025",
+    "image": "gallery_2.jpg",
+    "description": "A colorful celebration of academic excellence and student achievement at OLIS.",
+    "effect": "fade"
+  },
+  {
+    "title": "Science & Innovation Fair",
+    "date": "April 5, 2025",
+    "image": "gallery_3.jpg",
+    "description": "Our young scientists showcased brilliant innovations and creative experiments.",
+    "effect": "slide"
+  },
+  {
+    "title": "Cultural Day Celebration",
+    "date": "May 12, 2025",
+    "image": "gallery_4.jpg",
+    "description": "A vibrant display of Ghanaian culture, music, and tradition by OLIS students.",
+    "effect": "zoom"
+  },
+  {
+    "title": "PTA Annual General Meeting",
+    "date": "June 8, 2025",
+    "image": "gallery_6.jpg",
+    "description": "Parents and teachers met to discuss academic strategies for holistic growth.",
+    "effect": "brick"
+  },
+  {
+    "title": "Graduation Ceremony 2025",
+    "date": "July 14, 2025",
+    "image": "gallery_7.jpg",
+    "description": "Congratulations to our graduating class for outstanding accomplishments!",
+    "effect": "net"
+  }
+]
