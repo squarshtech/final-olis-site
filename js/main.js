@@ -207,209 +207,6 @@ document.querySelectorAll('[id^="modal"]').forEach(modal => {
     });
 });
 
-
-// // ======= GALLERY MODAL FUNCTIONALITY =======
-// const images = [
-//     { src: "https://picsum.photos/id/1005/800/500", title: "Science Fair" },
-//     { src: "https://picsum.photos/id/1011/800/500", title: "Sports Day" },
-//     { src: "https://picsum.photos/id/1025/800/500", title: "Cultural Display" },
-//     { src: "https://picsum.photos/id/1033/800/500", title: "Graduation Ceremony" },
-//     { src: "https://picsum.photos/id/1044/800/500", title: "Art Exhibition" },
-//     { src: "https://picsum.photos/id/1050/800/500", title: "Class Session" },
-//     { src: "https://picsum.photos/id/1062/800/500", title: "STEM Workshop" },
-//     { src: "https://picsum.photos/id/1070/800/500", title: "Music Class" }
-// ];
-
-// let currentIndex = 0;
-// let thumbStart = 0;
-// const visibleThumbs = 5;
-
-// const modal = document.getElementById('galleryModal');
-// const modalContent = document.getElementById('modalContent');
-// const modalImage = document.getElementById('modalImage');
-// const modalTitle = document.getElementById('modalTitle');
-// const thumbnailContainer = document.getElementById('thumbnailContainer');
-
-// function renderThumbnails() {
-//     thumbnailContainer.innerHTML = images.map((img, i) => `
-//       <img src="${img.src}" 
-//            alt="${img.title}"
-//            onclick="showImage(${i}, true)"
-//            class="w-20 h-14 object-cover rounded-md cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#fb923c] transition-all duration-200">
-//     `).join('');
-//     updateThumbnailPosition();
-//     highlightActiveThumbnail();
-// }
-
-// function openModal(index) {
-//     currentIndex = index;
-//     modal.classList.remove('hidden');
-
-//     // Fade + Zoom animation
-//     modalContent.classList.remove('opacity-0', 'scale-95');
-//     setTimeout(() => {
-//         modalContent.classList.add('opacity-100', 'scale-100');
-//     }, 10);
-
-//     showImage(index, false);
-//     document.body.style.overflow = 'hidden';
-//     renderThumbnails();
-// }
-
-// function closeModal() {
-//     modalContent.classList.remove('opacity-100', 'scale-100');
-//     modalContent.classList.add('opacity-0', 'scale-95');
-//     setTimeout(() => {
-//         modal.classList.add('hidden');
-//         document.body.style.overflow = 'auto';
-//     }, 300);
-// }
-
-// function showImage(index, fade = true) {
-//     const { src, title } = images[index];
-//     modalTitle.textContent = title;
-
-//     if (fade)
-//     {
-//         modalImage.classList.add('opacity-0');
-//         setTimeout(() => {
-//             modalImage.src = src;
-//             modalImage.alt = title;
-//             modalImage.onload = () => {
-//                 modalImage.classList.remove('opacity-0');
-//                 modalImage.classList.add('opacity-100');
-//             };
-//         }, 250);
-//     } else
-//     {
-//         modalImage.src = src;
-//         modalImage.alt = title;
-//         modalImage.classList.add('opacity-100');
-//     }
-
-//     highlightActiveThumbnail();
-//     autoCenterThumbnail(index);
-// }
-
-// function highlightActiveThumbnail() {
-//     Array.from(thumbnailContainer.children).forEach((thumb, i) => {
-//         thumb.classList.toggle('border-[#fb923c]', i === currentIndex);
-//         thumb.classList.toggle('opacity-100', i === currentIndex);
-//     });
-// }
-
-// function nextImage() {
-//     currentIndex = (currentIndex + 1) % images.length;
-//     showImage(currentIndex);
-// }
-
-// function prevImage() {
-//     currentIndex = (currentIndex - 1 + images.length) % images.length;
-//     showImage(currentIndex);
-// }
-
-// // Thumbnail navigation buttons
-// function nextThumbs() {
-//     if (thumbStart + visibleThumbs < images.length)
-//     {
-//         thumbStart++;
-//         updateThumbnailPosition();
-//     }
-// }
-
-// function prevThumbs() {
-//     if (thumbStart > 0)
-//     {
-//         thumbStart--;
-//         updateThumbnailPosition();
-//     }
-// }
-
-// // Thumbnail movement logic
-// function updateThumbnailPosition() {
-//     const offset = thumbStart * (80 + 8); // width + gap
-//     thumbnailContainer.style.transform = `translateX(-${offset}px)`;
-// }
-
-// // Auto-centering logic
-// function autoCenterThumbnail(index) {
-//     const containerWidth = thumbnailContainer.parentElement.offsetWidth;
-//     const thumbWidth = 80 + 8; // 80px + 8px gap
-//     const centerOffset = (index * thumbWidth) - (containerWidth / 2) + (thumbWidth / 2);
-
-//     const maxOffset = (images.length * thumbWidth) - containerWidth;
-//     const newOffset = Math.max(0, Math.min(centerOffset, maxOffset));
-
-//     thumbnailContainer.style.transform = `translateX(-${newOffset}px)`;
-// }
-
-// // Keyboard navigation
-// document.addEventListener('keydown', (e) => {
-//     if (!modal.classList.contains('hidden'))
-//     {
-//         if (e.key === 'ArrowRight') nextImage();
-//         if (e.key === 'ArrowLeft') prevImage();
-//         if (e.key === 'Escape') closeModal();
-//     }
-// });
-
-/* ====== TESTIMONIAL CAROUSEL JS ====== */
-// (function () {
-//     const slides = document.querySelector('#olisTestimonialSlides');
-//     const dots = document.querySelectorAll('.olisTestDot');
-//     const prevBtn = document.getElementById('olisTestimonialPrev');
-//     const nextBtn = document.getElementById('olisTestimonialNext');
-//     const total = dots.length;
-//     let current = 0;
-//     let timer;
-
-//     function updateSlide(index) {
-//         slides.style.transform = `translateX(-${index * 100}%)`;
-//         dots.forEach((dot, i) => {
-//             dot.classList.toggle('bg-[#fb923c]', i === index);
-//             dot.classList.toggle('bg-gray-300', i !== index);
-//         });
-//         current = index;
-//     }
-
-//     function nextSlide() {
-//         updateSlide((current + 1) % total);
-//     }
-
-//     function prevSlide() {
-//         updateSlide((current - 1 + total) % total);
-//     }
-
-//     nextBtn.addEventListener('click', () => {
-//         nextSlide();
-//         resetAuto();
-//     });
-
-//     prevBtn.addEventListener('click', () => {
-//         prevSlide();
-//         resetAuto();
-//     });
-
-//     dots.forEach(dot => {
-//         dot.addEventListener('click', () => {
-//             updateSlide(Number(dot.dataset.index));
-//             resetAuto();
-//         });
-//     });
-
-//     function autoPlay() {
-//         timer = setInterval(nextSlide, 12000);
-//     }
-
-//     function resetAuto() {
-//         clearInterval(timer);
-//         autoPlay();
-//     }
-
-//     updateSlide(0);
-//     autoPlay();
-// })();
-
 // ===== Scroll To Top Button Functionality =====
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -453,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   // Load gallery data
-  fetch("/assets/gallery.json")
+     fetch("https://squarshtech.github.io/assets/gallery.json")
     .then(res => res.json())
     .then(data => {
       galleryData = data;
@@ -783,7 +580,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Fetch testimonials from JSON
   try {
-    const res = await fetch("/assets/testimonial.json");
+    const res = await fetch("https://squarshtech.github.io/assets/testimonial.json");
     testimonials = await res.json();
     renderTestimonial(current);
     renderPagination();
@@ -909,3 +706,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       formStatus.className = "text-center text-sm mt-3 text-red-500";
     }
   });
+
