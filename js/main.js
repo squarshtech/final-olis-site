@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   // Load gallery data
-     fetch("https://squarshtech.github.io/assets/gallery.json")
+  fetch("https://squarshtech.github.io/final-olis-site/assets/gallery.json")
     .then(res => res.json())
     .then(data => {
       galleryData = data;
@@ -334,18 +334,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   let currentPage = 1;
   let resources = [];
 
-    // Load JSON
-    async function loadResources() {
-        try
-        {
-            const res = await fetch("./assets/resources.json");
-            resources = await res.json();
-            renderPage(currentPage);
-        } catch (error)
-        {
-            console.error("Failed to load resources.json:", error);
-        }
+  // Load JSON
+  async function loadResources() {
+    try {
+      const res = await fetch("https://squarshtech.github.io/final-olis-site/assets/resources.json");
+      resources = await res.json();
+      renderPage(currentPage);
+    } catch (error) {
+      console.error("Failed to load resources.json:", error);
     }
+  }
 
   // Render a single page of resources
   function renderPage(page) {
