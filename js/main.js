@@ -446,7 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "olisNewsSlide flex w-full absolute top-0 left-0 opacity-0 transition-all duration-[1500ms] ease-in-out";
         slide.style.zIndex = index === 0 ? "20" : "10";
         slide.innerHTML = `
-          <div class="w-3/5 h-[420px] bg-cover bg-center" style="background-image: url('/img/gallery/${item.image}')"></div>
+          <div class="w-3/5 h-[420px] bg-cover bg-center" style="background-image: url('https://squarshtech.github.io/final-olis-site/img/gallery/${item.image}')"></div>
           <div class="w-2/5 bg-[#111827] flex flex-col justify-center p-8 hover:animate-pulse">
             <h3 class="text-2xl font-bold text-[#fb923c] mb-2">${item.title}</h3>
             <p class="text-sm text-gray-500 mb-3">${item.date}</p>
@@ -687,6 +687,7 @@ form.addEventListener("submit", async (e) => {
     formStatus.className = "text-center text-sm mt-3 text-red-500";
   }
 });
+
 
 
 
