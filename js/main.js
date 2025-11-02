@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function loadResources() {
         try
         {
-            const res = await fetch("https://github.com/squarshtech/final-olis-site/resources.json");
+           const res = await fetch("https://squarshtech.github.io/final-olis-site/assets/resources.json");
             resources = await res.json();
             renderPage(currentPage);
         } catch (error)
@@ -706,5 +706,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       formStatus.className = "text-center text-sm mt-3 text-red-500";
     }
   });
+
 
 
