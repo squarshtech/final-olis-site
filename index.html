@@ -14,6 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/olis_favicons/olis_logo-16x16.png">
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/olis_favicons/olis_logo-180x180.png"> -->
   <meta name="msapplication-TileColor" content="#ff7a00">
+  <link rel="stylesheet" href="./css/custom-animate.css">
 
   <!-- <link rel="mask-icon" href="img/olis_favicons/olis_logo.svg" color="#ff7a00"> -->
   <!-- <link rel="manifest" href="img/olis_favicons/site.webmanifest">
@@ -21,6 +22,9 @@
   <meta name="theme-color" content="#ff7a00">
 
   <link rel="stylesheet" href="./css/main.css" />
+
+
+
 </head>
 
 <body class="bg-[#111827]">
@@ -89,7 +93,7 @@
     </nav>
 
     <!-- ===== Mobile Menu ===== -->
-    <div id="mobileMenu" class="hidden bg-black/90 border-t border-gray-700 lg:hidden">
+    <div id="mobileMenu" class="hidden bg-black/75 border-t border-gray-700 lg:hidden">
       <ul class="flex flex-col items-center py-4  space-y-3 font-medium text-sm">
         <li><a href="index.html" class="hover:text-[#fb923c]">Home</a></li>
         <li><a href="about.html" class="hover:text-[#fb923c]">About</a></li>
@@ -144,109 +148,53 @@
       <p class="text-white text-base sm:text-lg md:text-xl opacity-0 animate-fadeInUp mb-8">
         Empowering future leaders through knowledge and integrity.
       </p>
-      <a href="#about" id="exploreBtn"
+      <!-- <a href="#about" id="exploreBtn"
         class="inline-block bg-[#fb923c] text-[#111827] font-semibold py-3 px-8 rounded-full shadow-lg transition transform scale-0 animate-buttonPop hover:bg-white hover:text-[#111827]">
         Explore More
-      </a>
+      </a> -->
     </div>
   </section>
 
-  <!-- ======= Quick links section ========== -->
+  <!-- ===== OLIS Mobile Quick Links Bar ===== -->
   <section id="olis-quick-links"
-    class="absolute olis-quick-links -bottom-8 sm:-bottom-10 z-30 flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 pointer-events-auto px-4">
-
-    <!-- Home -->
-    <a href="#about" class="olis-quick-link group relative transition-transform duration-500 hover:scale-110">
-      <span
-        class="absolute -top-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 text-white text-xs sm:text-sm font-semibold tracking-wide">
-        About
-      </span>
-      <div
-        class="olis-quick-icon w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-[#fb923c] shadow-[0_0_15px_rgba(251,146,60,0.8)] group-hover:shadow-[0_0_25px_rgba(251,146,60,1)] transition-all">
-        <!-- Home SVG -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75h-5.25v-6h-6v6H3.75A.75.75 0 013 21V9.75z"/>
-      </svg> -->
-
-        <!-- About SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 6.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12 9v9m9 3H3a2 2 0 01-2-2V5a2 2 0 012-2h18a2 2 0 012 2v14a2 2 0 01-2 2z" />
-        </svg>
-
-      </div>
+    class="fixed bottom-0 left-0 right-0 z-40 bg-[#111827]/80 backdrop-blur-md py-2 px-6 flex justify-around items-center md:hidden">
+    <a href="#home" class="text-orange-400 flex flex-col items-center text-xs">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m0 0H5a2 2 0 01-2-2v-6a2 2 0 012-2h2m4 10h4m0 0v-8m0 8h4a2 2 0 002-2v-6a2 2 0 00-2-2h-2" />
+      </svg>
+      Home
     </a>
-
-    <!-- Team -->
-    <a href="#olis-team" class="olis-quick-link group relative transition-transform duration-500 hover:scale-110">
-      <span
-        class="absolute -top-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 text-white text-xs sm:text-sm font-semibold tracking-wide">
-        Team
-      </span>
-      <div
-        class="olis-quick-icon w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.7)] group-hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all">
-        <!-- Team SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-[#fb923c]" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 11c1.933 0 3.5-1.567 3.5-3.5S13.933 4 12 4 8.5 5.567 8.5 7.5 10.067 11 12 11zm0 2c-2.485 0-7 1.243-7 3.5V20h14v-3.5c0-2.257-4.515-3.5-7-3.5z" />
-        </svg>
-      </div>
+    <a href="#about" class="text-orange-400 flex flex-col items-center text-xs">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.78.607 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      About
     </a>
-
-    <!-- News -->
-    <a href="#olisNewsSection" class="olis-quick-link group relative transition-transform duration-500 hover:scale-110">
-      <span
-        class="absolute -top-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 text-white text-xs sm:text-sm font-semibold tracking-wide">
-        News
-      </span>
-      <div
-        class="olis-quick-icon w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-[#fb923c] shadow-[0_0_15px_rgba(251,146,60,0.8)] group-hover:shadow-[0_0_25px_rgba(251,146,60,1)] transition-all">
-        <!-- Unique News SVG (Newspaper Icon) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4V5zm2 2v10h12V7H6zm2 2h8m-8 4h4" />
-        </svg>
-      </div>
+    <a href="#news" class="text-orange-400 flex flex-col items-center text-xs">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M19 20H5a2 2 0 01-2-2V7a2 2 0 012-2h10l6 6v7a2 2 0 01-2 2z" />
+      </svg>
+      News
     </a>
-
-    <!-- Gallery -->
-    <a href="#olisGallery" class="olis-quick-link group relative transition-transform duration-500 hover:scale-110">
-      <span
-        class="absolute -top-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 text-white text-xs sm:text-sm font-semibold tracking-wide">
-        Gallery
-      </span>
-      <div
-        class="olis-quick-icon w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.7)] group-hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all">
-        <!-- Gallery SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-[#fb923c]" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M4 5h16v14H4V5zm2 2v10h12V7H6zm3 4l2.5 3 3.5-4 3 4H7l2-3z" />
-        </svg>
-      </div>
+    <a href="#gallery" class="text-orange-400 flex flex-col items-center text-xs">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4-4a2 2 0 012 0l4 4a2 2 0 002 0l4-4M4 8h16" />
+      </svg>
+      Gallery
     </a>
-
-    <!-- Contact -->
-    <a href="#olis-contact" class="olis-quick-link group relative transition-transform duration-500 hover:scale-110">
-      <span
-        class="absolute -top-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 text-white text-xs sm:text-sm font-semibold tracking-wide">
-        Contact
-      </span>
-      <div
-        class="olis-quick-icon w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-[#fb923c] shadow-[0_0_15px_rgba(251,146,60,0.8)] group-hover:shadow-[0_0_25px_rgba(251,146,60,1)] transition-all">
-        <!-- Unique Contact SVG (Envelope + Phone Combo) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21 8V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1m18 0-9 6-9-6m18 0v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m10 11v-1m0 0a3 3 0 0 1-3-3h6a3 3 0 0 1-3 3z" />
-        </svg>
-      </div>
+    <a href="#contact" class="text-orange-400 flex flex-col items-center text-xs">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a9 9 0 11-18 0 9 9 0 0118 0zM9 12l2 2 4-4" />
+      </svg>
+      Contact
     </a>
-
   </section>
 
+
+  <!-- ===== Floating Social Action Button ===== -->
 
 
   <!-- ===== Welcome from Head of School + Vision & Mission ===== -->
@@ -377,23 +325,36 @@
   </section>
 
 
-  <!-- ===== OLIS NEWS & EVENTS SECTION ===== -->
-  <section id="olisNewsSection" class="relative bg-white full py-16  overflow-hidden">
+
+  `<!-- ===== OLIS NEWS & EVENTS SECTION ===== -->
+  <section id="olisNewsSection" class="relative bg-white py-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#fb923c]">News & Events</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#fb923c]">News & Events</h2>
 
-      <!-- Carousel Wrapper -->
-      <div id="olisNewsCarousel" class="relative overflow-hidden rounded-2xl shadow-lg">
-        <div id="olisNewsSlides" class="relative w-full h-[420px] flex transition-all duration-1000 ease-in-out"></div>
+      <!-- ====== News Carousel ====== -->
+      <div id="olisNewsContainer" class="flex flex-col md:flex-row bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
+        <!-- Image Half -->
+        <div class="relative w-full md:w-1/2 h-[360px] md:h-[460px] overflow-hidden" id="olisImageWrapper">
+          <div id="olisImageSlides" class="relative w-full h-full"></div>
+          <div id="overlayEffect" class="absolute inset-0 bg-black/30 opacity-0 transition-all duration-700"></div>
 
-        <!-- Number Pagination -->
-        <div id="olisNumberPagination"
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30 bg-black/40 px-5 py-2 rounded-full backdrop-blur-sm">
-          <!-- Numbers will be dynamically added -->
+          <!-- Pagination -->
+          <div id="olisPagination"
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 bg-black/40 px-5 py-2 rounded-full backdrop-blur-sm text-white text-sm font-semibold z-30">
+          </div>
+        </div>
+
+        <!-- Text Half -->
+        <div id="olisTextArea" class="w-full md:w-1/2 bg-[#111827] text-white flex flex-col justify-center p-8">
+          <h3 id="olisNewsTitle" class="text-2xl font-bold text-[#fb923c] mb-3 transition-all duration-700">Loading...
+          </h3>
+          <p id="olisNewsDate" class="text-gray-400 text-sm mb-4 transition-all duration-700"></p>
+          <p id="olisNewsDescription" class="text-base leading-relaxed transition-all duration-700"></p>
         </div>
       </div>
     </div>
   </section>
+
 
 
   <!-- ===== RESOURCES & DOWNLOADS ===== -->
@@ -626,7 +587,7 @@
       <!-- ===== Logo & About ===== -->
       <div class="space-y-4">
         <div class="flex items-center space-x-3">
-          <img src="img/olis_logo.png" alt="OLIS Logo" class="w-12 h-12 object-contain">
+          <img src="img/olis_logo-512x512.png" alt="OLIS Logo" class="w-12 h-12 object-contain">
           <h3 class="text-[#fb923c] font-bold text-xl">Osagyefo Leadership<br>International School</h3>
         </div>
         <p class="text-sm leading-relaxed text-gray-400">
@@ -721,17 +682,21 @@
 
 
   <!-- ===== Scroll To Top Button ===== -->
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 right-6 bg-[#fb923c] text-[#111827] p-3 rounded-full shadow-lg hover:bg-[#fcae6b] transition-all duration-300 z-50">
-    <!-- Up arrow icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+  <!-- <button id="scrollTopBtn"
+    class="hidden fixed bottom-4 right-6 bg-[#fff] text-[#111827] opacity-0 p-3 rounded-full shadow-lg hover:bg-[#fcae6b] transition-all duration-300 z-50"> -->
+  <!-- Up arrow icon -->
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
       stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
     </svg>
-  </button>
+  </button> -->
+
 
   <script>
 
+  </script>
+
+  <script>
 
     // auto update year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -743,7 +708,87 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- ===== OLIS Social Floating Menu ===== -->
+  <div id="olis-social-menu" class="fixed bottom-4 right-6 z-50">
+    <!-- Hidden Social Icons -->
+    <div id="olis-social-icons"
+      class="flex flex-col items-center space-y-3 mb-3 opacity-0 translate-y-6 pointer-events-none transition-all duration-500 ease-out">
 
+      <!-- WhatsApp -->
+      <a href="https://wa.me/233245774699?text=Hello OLIS, I’d like to know more about admissions!" target="_blank"
+        class="bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 olis-social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#111827" viewBox="0 0 24 24" width="20" height="20">
+          <path
+            d="M12.004 0C5.374 0 0 4.99 0 11.146c0 1.964.534 3.89 1.56 5.563L0 24l7.319-1.93a12.06 12.06 0 0 0 4.685.939h.001c6.63 0 12.004-4.99 12.004-11.145S18.635 0 12.004 0zm0 21.79c-1.56 0-3.084-.384-4.448-1.107l-.32-.17-4.356 1.15 1.163-4.268-.22-.35a9.35 9.35 0 0 1-1.452-4.899c0-5.162 4.262-9.366 9.633-9.366 2.57 0 4.984.988 6.803 2.782a9.19 9.19 0 0 1 2.83 6.583c0 5.162-4.263 9.366-9.633 9.366zm5.487-7.268c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15s-.75.97-.92 1.17c-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.35-1.48-.87-.77-1.46-1.72-1.63-2.02-.17-.3-.02-.47.13-.62.13-.13.29-.33.43-.5.14-.17.19-.28.28-.47.09-.19.05-.36-.03-.51-.07-.15-.63-1.53-.87-2.1-.23-.56-.47-.48-.64-.49-.17-.01-.36-.02-.55-.02s-.5.07-.76.35c-.26.28-1 1-1 2.38 0 1.38 1.01 2.73 1.16 2.91.14.18 2 3.06 4.84 4.3.68.29 1.21.46 1.63.59.68.22 1.29.18 1.78.11.55-.08 1.7-.7 1.95-1.37.25-.67.25-1.25.18-1.36-.07-.11-.27-.18-.56-.33z" />
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank"
+        class="bg-[#1877F2] p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 olis-social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M22.675 0h-21.35C.597 0 0 .598 0 1.337v21.326C0 23.402.597 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.716-1.796 1.765v2.313h3.587l-.467 3.622h-3.12V24h6.117C23.403 24 24 23.402 24 22.663V1.337C24 .598 23.403 0 22.675 0z" />
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank"
+        class="bg-gradient-to-tr from-pink-500 to-yellow-500 p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 olis-social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6zm5.75-2.5a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5z" />
+        </svg>
+      </a>
+
+      <!-- Call -->
+      <a href="tel:+233245774699"
+        class="bg-[#fb923c] p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 olis-social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.61a1 1 0 01-1 1A17.92 17.92 0 012 6a1 1 0 011-1h3.61a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.05l-2.34 2.06z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Main Toggle Button (WhatsApp Style) -->
+    <button id="olis-toggle-btn"
+      class="bg-[#fb923c]/90 p-4 bottom-64 rounded-full shadow-xl hover:scale-110 transition-transform duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" width="26" height="26">
+        <path
+          d="M12.004 0C5.374 0 0 4.99 0 11.146c0 1.964.534 3.89 1.56 5.563L0 24l7.319-1.93a12.06 12.06 0 0 0 4.685.939h.001c6.63 0 12.004-4.99 12.004-11.145S18.635 0 12.004 0z" />
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("olis-toggle-btn");
+    const socialIcons = document.getElementById("olis-social-icons");
+    const socialMenu = document.getElementById("olis-social-menu");
+    const socialLinks = document.querySelectorAll(".olis-social-link");
+
+    // Toggle open/close
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      socialIcons.classList.toggle("opacity-100");
+      socialIcons.classList.toggle("translate-y-0");
+      socialIcons.classList.toggle("pointer-events-auto");
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!socialMenu.contains(e.target)) {
+        socialIcons.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+      }
+    });
+
+    // Close after clicking any social link
+    socialLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        socialIcons.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+      });
+    });
+  </script>
 </body>
 
 

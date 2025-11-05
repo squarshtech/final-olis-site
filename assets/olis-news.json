@@ -23,14 +23,21 @@
   {
     "title": "PTA Annual General Meeting",
     "date": "June 8, 2025",
-    "image": "gallery_6.jpg",
+    "image": "gallery_5.jpg",
     "description": "Parents and teachers met to discuss academic strategies for holistic growth.",
     "effect": "brick"
   },
   {
     "title": "Graduation Ceremony 2025",
     "date": "July 14, 2025",
-    "image": "gallery_7.jpg",
+    "image": "gallery_6.jpg",
+    "description": "Congratulations to our graduating class for outstanding accomplishments!",
+    "effect": "net"
+  },
+  {
+    "title": "Graduation Ceremony 2025",
+    "date": "July 14, 2025",
+    "image": "gallery_6.jpg",
     "description": "Congratulations to our graduating class for outstanding accomplishments!",
     "effect": "net"
   }

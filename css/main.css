@@ -684,3 +684,92 @@
              opacity: 1;
              transform: translateY(-0.25rem);
          }
+
+         @media (max-width: 600px) {
+             /* .olis-quick-links {
+                 visibility: hidden;
+             } */
+
+             /* .news-heading {
+                 font-size: 1.2rem;
+                 text-wrap: inherit;
+             }
+
+             .news-para {
+                 font-size: 0.9rem;
+                 text-wrap: inherit;
+                 white-space: normal;
+             } */
+
+             /* .w-2\/5 {
+            width: 50% !important;
+         } */
+
+             /* @media (min-width: 768px) {
+             .olis-quick-label {
+                 font-size: 1rem;
+             }
+         } */
+         }
+
+
+         /* ===== Custom Animation Snippets ===== */
+         @media (min-width: 768px) {
+             #olis-quick-links {
+                 display: none;
+             }
+         }
+
+         /* Floating social animation */
+         /* Hide quick links on desktop */
+         @media (min-width: 768px) {
+             #olis-quick-links {
+                 display: none;
+             }
+         }
+
+         /@media (min-width: 768px) {
+             #olis-quick-links {
+                 display: none;
+             }
+         }
+
+         /* Radial expansion effect */
+         #olis-social-menu {
+             position: fixed;
+             bottom: 5rem;
+             right: 1.25rem;
+         }
+
+         #olis-social-menu.active .olis-social-item {
+             transform: scale(1);
+             opacity: 1;
+         }
+
+         .olis-social-item {
+             opacity: 0;
+             transform-origin: center;
+         }
+
+         #olis-social-menu.active .olis-social-item {
+             transform: translate(calc(80px * cos(var(--angle))),
+                     calc(-80px * sin(var(--angle)))) scale(1);
+             opacity: 1;
+         }
+
+         /* Smooth animation delays */
+         .olis-social-item:nth-child(1) {
+             transition-delay: 0.05s;
+         }
+
+         .olis-social-item:nth-child(2) {
+             transition-delay: 0.1s;
+         }
+
+         .olis-social-item:nth-child(3) {
+             transition-delay: 0.15s;
+         }
+
+         .olis-social-item:nth-child(4) {
+             transition-delay: 0.2s;
+         }

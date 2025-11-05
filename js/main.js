@@ -111,31 +111,31 @@ mobileLinks.forEach(link => {
 
 
 // Add pulsing after the button has appeared
-window.addEventListener('load', () => {
-  const exploreBtn = document.getElementById('exploreBtn');
-  setTimeout(() => {
-    exploreBtn.classList.add('loaded');
-  }, 2000); // begins after button pop finishes
-});
+// window.addEventListener('load', () => {
+//   const exploreBtn = document.getElementById('exploreBtn');
+//   setTimeout(() => {
+//     exploreBtn.classList.add('loaded');
+//   }, 2000); // begins after button pop finishes
+// });
 
 
 
 // Enable soft pulse animation
-window.addEventListener('load', () => {
-  const exploreBtn = document.getElementById('exploreBtn');
-  setTimeout(() => {
-    exploreBtn.classList.add('loaded');
-  }, 2000);
-});
+// window.addEventListener('load', () => {
+//   const exploreBtn = document.getElementById('exploreBtn');
+//   setTimeout(() => {
+//     exploreBtn.classList.add('loaded');
+//   }, 2000);
+// });
 
 // Smooth scroll to About section
-document.getElementById('exploreBtn').addEventListener('click', (e) => {
-  e.preventDefault();
-  const aboutSection = document.querySelector('#about');
-  if (aboutSection) {
-    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-});
+// document.getElementById('exploreBtn').addEventListener('click', (e) => {
+//   e.preventDefault();
+//   const aboutSection = document.querySelector('#about');
+//   if (aboutSection) {
+//     aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//   }
+// });
 
 
 // Scroll reveal animations (existing)
@@ -203,7 +203,7 @@ document.querySelectorAll('[id^="modal"]').forEach(modal => {
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 // Show button after scrolling 200px
-window.addEventListener("scroll", () => {
+/* window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     scrollTopBtn.classList.remove("hidden");
     scrollTopBtn.classList.add("flex", "items-center", "justify-center", "fade-in");
@@ -213,14 +213,16 @@ window.addEventListener("scroll", () => {
   }
 });
 
+*/
+
 // Smooth scroll to top
-scrollTopBtn.addEventListener("click", () => {
+/*scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
 });
-
+*/
 
 
 // ===== Gallery Functionality =====
@@ -428,88 +430,140 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadResources();
 });
 
-// ===== NEWS SECTION WITH PAGINATION =====
+
+
+// ===== OLIS NEWS SLIDER WITH EFFECTS =====
 document.addEventListener("DOMContentLoaded", () => {
-  const slidesContainer = document.getElementById("olisNewsSlides");
-  const paginationContainer = document.getElementById("olisNumberPagination");
+  const imageWrapper = document.getElementById("olisImageSlides");
+  const pagination = document.getElementById("olisPagination");
+  const textTitle = document.getElementById("olisNewsTitle");
+  const textDate = document.getElementById("olisNewsDate");
+  const textDesc = document.getElementById("olisNewsDescription");
+  const textArea = document.getElementById("olisTextArea");
+
   let slides = [];
-  let currentSlide = 0;
-  let autoSlideInterval;
+  let current = 0;
+  let autoSlide;
 
   fetch("https://squarshtech.github.io/final-olis-site/assets/olis-news.json")
     .then(res => res.json())
     .then(data => {
-      data.forEach((item, index) => {
-        // Create slide
-        const slide = document.createElement("div");
-        slide.className =
-          "olisNewsSlide flex w-full absolute top-0 left-0 opacity-0 transition-all duration-[1500ms] ease-in-out";
-        slide.style.zIndex = index === 0 ? "20" : "10";
-        slide.innerHTML = `
-          <div class="w-3/5 h-[420px] bg-cover bg-center" style="background-image: url('https://squarshtech.github.io/final-olis-site/img/gallery/${item.image}')"></div>
-          <div class="w-2/5 bg-[#111827] flex flex-col justify-center p-8 hover:animate-pulse">
-            <h3 class="text-2xl font-bold text-[#fb923c] mb-2">${item.title}</h3>
-            <p class="text-sm text-gray-500 mb-3">${item.date}</p>
-            <p class="text-white text-base">${item.description}</p>
-          </div>
-        `;
-        slidesContainer.appendChild(slide);
+      data.forEach((item, i) => {
+        const img = document.createElement("div");
+        img.className = `absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-[1200ms] ease-in-out`;
+        img.style.backgroundImage = `url('https://squarshtech.github.io/final-olis-site/img/gallery/${item.image}')`;
+        imageWrapper.appendChild(img);
 
-        // Create numbered pagination
-        const num = document.createElement("button");
-        num.className =
-          "olisNum text-white text-sm font-semibold w-7 h-7 rounded-full border border-white/40 hover:bg-orange-500 transition-all duration-300";
-        num.textContent = index + 1;
-        num.addEventListener("click", () => switchToSlide(index));
-        paginationContainer.appendChild(num);
+        const dot = document.createElement("button");
+        dot.className =
+          "olisDot w-6 h-6 flex items-center justify-center rounded-full border border-white/50 hover:bg-orange-500 transition-all duration-300";
+        dot.textContent = i + 1;
+        dot.addEventListener("click", () => switchSlide(i));
+        pagination.appendChild(dot);
       });
 
-      slides = document.querySelectorAll(".olisNewsSlide");
-      const numbers = document.querySelectorAll(".olisNum");
+      slides = document.querySelectorAll("#olisImageSlides > div");
+      const dots = document.querySelectorAll(".olisDot");
 
-      // Initialize first slide
-      slides[0].classList.add("opacity-100");
-      numbers[0].classList.add("bg-orange-500");
+      function createEffect(type, bgImage) {
+        const effectLayer = document.createElement("div");
+        effectLayer.className = "absolute inset-0 pointer-events-none z-20";
+        effectLayer.style.backgroundImage = bgImage;
+        effectLayer.style.backgroundSize = "cover";
+        effectLayer.style.backgroundPosition = "center";
 
-      const transitions = [
-        "scale(1.05)",
-        "translateX(20px)",
-        "translateY(-10px)",
-        "rotateY(5deg)",
-        "skewY(3deg)"
-      ];
+        switch (type) {
+          case "tile":
+            effectLayer.style.clipPath = "polygon(0 0, 0 0, 0 100%, 0 100%)";
+            effectLayer.style.transition = "clip-path 1.2s ease-out";
+            requestAnimationFrame(() => {
+              effectLayer.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
+            });
+            break;
 
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.remove("opacity-100");
-          slide.classList.add("opacity-0");
-          slide.style.zIndex = i === index ? "20" : "10";
-          slide.style.transform = i === index ? transitions[Math.floor(Math.random() * transitions.length)] : "";
-          numbers[i].classList.remove("bg-orange-500");
+          case "splash":
+            effectLayer.style.clipPath = "circle(0% at 50% 50%)";
+            effectLayer.style.transition = "clip-path 1.5s ease-out";
+            requestAnimationFrame(() => {
+              effectLayer.style.clipPath = "circle(150% at 50% 50%)";
+            });
+            break;
+
+          case "cube":
+            effectLayer.style.transform = "rotateY(90deg)";
+            effectLayer.style.transition = "transform 1s ease-in-out";
+            requestAnimationFrame(() => {
+              effectLayer.style.transform = "rotateY(0)";
+            });
+            break;
+
+          case "zoom-blur":
+            effectLayer.style.transform = "scale(1.4)";
+            effectLayer.style.filter = "blur(20px)";
+            effectLayer.style.opacity = "0";
+            effectLayer.style.transition = "all 1.5s ease-out";
+            requestAnimationFrame(() => {
+              effectLayer.style.transform = "scale(1)";
+              effectLayer.style.filter = "blur(0)";
+              effectLayer.style.opacity = "1";
+            });
+            break;
+        }
+
+        return effectLayer;
+      }
+
+      function showSlide(i) {
+        const effectType = ["tile", "splash", "cube", "zoom-blur"][Math.floor(Math.random() * 4)];
+        const newSlide = slides[i];
+        const oldSlide = slides[current];
+
+        // Fade transitions
+        slides.forEach((s, idx) => {
+          s.classList.remove("opacity-100");
+          s.classList.add("opacity-0");
+          dots[idx].classList.remove("bg-orange-500");
         });
-        slides[index].classList.add("opacity-100");
-        numbers[index].classList.add("bg-orange-500");
-        currentSlide = index;
+        newSlide.classList.remove("opacity-0");
+        newSlide.classList.add("opacity-100");
+        dots[i].classList.add("bg-orange-500");
+
+        // Add and animate effect layer
+        const effectLayer = createEffect(effectType, newSlide.style.backgroundImage);
+        imageWrapper.appendChild(effectLayer);
+        setTimeout(() => effectLayer.remove(), 1600);
+
+        // Sync text fade
+        textArea.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => {
+          textTitle.textContent = data[i].title;
+          textDate.textContent = data[i].date;
+          textDesc.textContent = data[i].description;
+          textArea.classList.remove("opacity-0", "translate-y-2");
+        }, 700);
+
+        current = i;
       }
 
       function nextSlide() {
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next);
+        showSlide((current + 1) % slides.length);
       }
 
-      function switchToSlide(index) {
-        clearInterval(autoSlideInterval);
-        showSlide(index);
-        startAutoSlide();
+      function switchSlide(i) {
+        clearInterval(autoSlide);
+        showSlide(i);
+        startAuto();
       }
 
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 6000);
+      function startAuto() {
+        autoSlide = setInterval(nextSlide, 7000);
       }
 
-      startAutoSlide();
+      showSlide(0);
+      startAuto();
     });
 });
+
 
 // ===== OLIS TEAM SECTION =====
 
@@ -688,6 +742,28 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
+// quick links visibility toggle
+let lastScrollY = window.scrollY;
+const quickLinks = document.getElementById("olis-quick-links");
 
+window.addEventListener("scroll", () => {
+  if (window.innerWidth <= 768) { // Only on mobile
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down → hide
+      quickLinks.style.transform = "translateY(100%)";
+    } else {
+      // Scrolling up → show
+      quickLinks.style.transform = "translateY(0)";
+    }
+    lastScrollY = window.scrollY;
+  }
+});
 
+// const socialMenu = document.getElementById("olis-social-menu");
+// const toggleBtn = document.getElementById("social-toggle");
 
+// toggleBtn.addEventListener("click", () => {
+//   socialMenu.classList.toggle("active");
+// });
+// Floating Social Chat Menu Toggle
+// Floating Social Chat Menu Toggle
