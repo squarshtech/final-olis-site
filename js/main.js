@@ -772,8 +772,8 @@ window.addEventListener("scroll", () => {
 // Run initially and when resized
 
 // Adjust Tawk.to chat widget position based on screen width
-setTimeout(adjustTawkPosition, 3000);
-window.addEventListener('resize', adjustTawkPosition);
+// setTimeout(adjustTawkPosition, 3000);
+// window.addEventListener('resize', adjustTawkPosition);
 
 
 

@@ -774,17 +774,3 @@
              transition-delay: 0.2s;
          }
 
-         /* Chat widget positioning adjustments */
-         /* Default (desktop) */
-         iframe[title="chat widget"] {
-             bottom: 40px !important;
-             /* normal desktop position */
-         }
-
-         /* On small screens (e.g. mobile) */
-         @media (max-width: 600px) {
-             iframe[title="chat widget"] {
-                 bottom: 100px !important;
-                 /* push it higher on mobile */
-             }
-         }
